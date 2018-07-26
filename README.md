@@ -19,6 +19,8 @@ V2EX Flutter Demo
 
 ### app 下载
 
+下载最新的release https://github.com/onlynight/v2ex_flutter_demo/releases
+
 ### 相关项目
 
 使用 V2EX 接口项目地址: https://github.com/djyde/V2EX-API
