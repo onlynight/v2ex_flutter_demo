@@ -34,10 +34,10 @@ class NetworkApi {
 
   static dynamic _get(String url) async {
 //    log.fine('log');
-    var response = await _read(url);
+    String response = await _read(url);
 //    log.fine('$url =>\n $response');
     print('$url =>\n $response');
-    return json.decode(response);
+    return json.decode(response.replaceAll('\r\n', '').replaceAll('\n', ''));
   }
 
   static Future<SiteInfoResp> getSiteInfo() async {

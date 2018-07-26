@@ -41,7 +41,6 @@ class Reply {
   String title;
   String url;
   Member member;
-  Node node;
 
   Reply.fromParams(
       {this.created,
@@ -54,8 +53,7 @@ class Reply {
       this.last_reply_by,
       this.title,
       this.url,
-      this.member,
-      this.node});
+      this.member});
 
   Reply.fromJson(jsonRes) {
     created = jsonRes['created'];
@@ -69,7 +67,6 @@ class Reply {
     title = jsonRes['title'];
     url = jsonRes['url'];
     member = new Member.fromJson(jsonRes['member']);
-    node = new Node.fromJson(jsonRes['node']);
   }
 
   @override
@@ -83,77 +80,6 @@ class Reply {
         last_reply_by)}' : 'null'},"title": ${title != null ? '${json.encode(
         title)}' : 'null'},"url": ${url != null
         ? '${json.encode(url)}'
-        : 'null'},"member": $member,"node": $node}';
-  }
-}
-
-class Node {
-  int id;
-  int stars;
-  int topics;
-  bool root;
-  String avatar_large;
-  String avatar_mini;
-  String avatar_normal;
-  String footer;
-  String header;
-  String name;
-  String parent_node_name;
-  String title;
-  String title_alternative;
-  String url;
-
-  Node.fromParams(
-      {this.id,
-      this.stars,
-      this.topics,
-      this.root,
-      this.avatar_large,
-      this.avatar_mini,
-      this.avatar_normal,
-      this.footer,
-      this.header,
-      this.name,
-      this.parent_node_name,
-      this.title,
-      this.title_alternative,
-      this.url});
-
-  Node.fromJson(jsonRes) {
-    id = jsonRes['id'];
-    stars = jsonRes['stars'];
-    topics = jsonRes['topics'];
-    root = jsonRes['root'];
-    avatar_large = jsonRes['avatar_large'];
-    avatar_mini = jsonRes['avatar_mini'];
-    avatar_normal = jsonRes['avatar_normal'];
-    footer = jsonRes['footer'];
-    header = jsonRes['header'];
-    name = jsonRes['name'];
-    parent_node_name = jsonRes['parent_node_name'];
-    title = jsonRes['title'];
-    title_alternative = jsonRes['title_alternative'];
-    url = jsonRes['url'];
-  }
-
-  @override
-  String toString() {
-    return '{"id": $id,"stars": $stars,"topics": $topics,"root": $root,"avatar_large": ${avatar_large !=
-        null
-        ? '${json.encode(avatar_large)}'
-        : 'null'},"avatar_mini": ${avatar_mini != null ? '${json.encode(
-        avatar_mini)}' : 'null'},"avatar_normal": ${avatar_normal != null
-        ? '${json.encode(avatar_normal)}'
-        : 'null'},"footer": ${footer != null
-        ? '${json.encode(footer)}'
-        : 'null'},"header": ${header != null
-        ? '${json.encode(header)}'
-        : 'null'},"name": ${name != null
-        ? '${json.encode(name)}'
-        : 'null'},"parent_node_name": ${parent_node_name != null ? '${json
-        .encode(parent_node_name)}' : 'null'},"title": ${title != null ? '${json
-        .encode(title)}' : 'null'},"title_alternative": ${title_alternative !=
-        null ? '${json.encode(title_alternative)}' : 'null'},"url": ${url !=
-        null ? '${json.encode(url)}' : 'null'}}';
+        : 'null'},"member": $member}';
   }
 }
