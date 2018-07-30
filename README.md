@@ -1,6 +1,10 @@
 V2EX Flutter Demo
 ===============
 
+## 写Demo经验分享给大家
+
+https://github.com/onlynight/v2ex_flutter_demo/blob/master/README_QUEST.md
+
 ## 关于Demo
 
 该 Demo 旨在学习 flutter ，以及研究flutter的实用性。
